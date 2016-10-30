@@ -20,7 +20,7 @@ public class LoginTest2 {
     @BeforeSuite
     public void warmUp(){
         ApplicationSourcesRepository.getChromeHeroku();
-        Application.get().getWebDriver().navigate().to(ApplicationSourcesRepository.getFirefoxHeroku().getLoginUrl());
+        Application.get().navigate().to(ApplicationSourcesRepository.getFirefoxHeroku().getLoginUrl());
 
 
 

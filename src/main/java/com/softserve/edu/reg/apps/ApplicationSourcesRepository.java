@@ -12,7 +12,7 @@ public final class ApplicationSourcesRepository {
 	public static ApplicationSources getFirefoxHeroku() {
 		return ApplicationSources.get()
 				.setBrowserName("Firefox")
-				.setDriverPath("src\\main\\resources\\drivers\\geckodriver.exe")
+				.setDriverPath("src\\main\\resources\\drivers\\geckodriver.jar")
 				.setImplicitTimeOut(5L)
 				.setLoginUrl("http://registrator.herokuapp.com/login")
 				.setLogoutUrl("http://registrator.herokuapp.com/logout")
@@ -22,7 +22,7 @@ public final class ApplicationSourcesRepository {
 	public static ApplicationSources getChromeHeroku() {
 		return ApplicationSources.get()
 				.setBrowserName("Chrome")
-				.setDriverPath("src\\main\\resources\\drivers\\chromedriver.exe")
+				.setDriverPath("src\\main\\resources\\drivers\\chromedriver.jar")
 				.setImplicitTimeOut(5L)
 				.setLoginUrl("http://registrator.herokuapp.com/login")
 				.setLogoutUrl("http://registrator.herokuapp.com/logout")
