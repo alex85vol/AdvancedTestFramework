@@ -157,9 +157,11 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
         return searchStrategy;
     }
 
-    public String getLoggerStrategy() {
+    public String getLoggerstrategy() {
         return loggerStrategy;
     }
+
+
 
     public String getLoginUrl() {
         return loginUrl;
@@ -169,8 +171,9 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
         return logoutUrl;
     }
 
-
-    public String getServerUrl() {
+    public String serverUrl() {
         return serverUrl;
     }
+
+
 }

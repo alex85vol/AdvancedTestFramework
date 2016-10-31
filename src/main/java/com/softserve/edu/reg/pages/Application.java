@@ -1,13 +1,12 @@
 package com.softserve.edu.reg.pages;
 
-import java.util.concurrent.TimeUnit;
-
+import com.softserve.edu.reg.apps.ApplicationSources;
+import com.softserve.edu.reg.apps.ApplicationSourcesRepository;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.softserve.edu.reg.apps.ApplicationSources;
-import com.softserve.edu.reg.apps.ApplicationSourcesRepository;
+import java.util.concurrent.TimeUnit;
 
 public class Application {
 
@@ -53,6 +52,7 @@ public class Application {
 		}
 
 		public WebDriver runBrowser(Application application) {
+
 			return browser.getBrowser(application);
 		}
 

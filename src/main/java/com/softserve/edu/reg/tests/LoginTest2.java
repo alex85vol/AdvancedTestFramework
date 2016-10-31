@@ -17,7 +17,7 @@ public class LoginTest2 {
 
     @BeforeSuite
     public void warmUp(){
-    ;
+
 
 
 

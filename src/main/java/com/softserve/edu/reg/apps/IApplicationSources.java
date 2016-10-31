@@ -11,7 +11,17 @@ public interface IApplicationSources {
 
     long getImplicitTimeOut();
 
+    long getExplicitTimeOut();
+
+    String getLanguage();
+
+    String getSearchStrategy();
+
+    String getLoggerstrategy();
+
     String getLoginUrl();
 
     String getLogoutUrl();
+
+    String serverUrl();
 }
