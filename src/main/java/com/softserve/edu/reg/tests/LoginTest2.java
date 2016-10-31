@@ -2,12 +2,17 @@ package com.softserve.edu.reg.tests;
 
 
 import com.softserve.edu.reg.apps.ApplicationSources;
+import com.softserve.edu.reg.apps.ApplicationSourcesRepository;
 import com.softserve.edu.reg.data.IUser;
 import com.softserve.edu.reg.data.UserRepository;
+import com.softserve.edu.reg.pages.AdminHomePage;
 import com.softserve.edu.reg.pages.Application;
 import com.softserve.edu.reg.pages.LoginPage;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
@@ -15,35 +20,33 @@ import org.testng.annotations.Test;
  */
 public class LoginTest2 {
 
-    @BeforeSuite
-    public void warmUp(){
 
-
-
-
-
+    @DataProvider //(parallel = true)
+    public Object[][] adminUsers() {
+        return new Object[][] {
+                //{ ApplicationSourcesRepository.getChromeHeroku(), UserRepository.getAdmin() },
+                { ApplicationSourcesRepository.getFirefoxHeroku(), UserRepository.getAdmin() }};
     }
 
-    @Test
-    public void testLogin(ApplicationSources applicationSources, IUser admin) throws Exception {
+    @Test   (dataProvider = "adminUsers")
+    public void testLogin(ApplicationSources applicationSources, IUser admin) throws Exception{
         // Precondition
-        LoginPage loginPage = null;
-        //
+        LoginPage loginPage = Application.get(applicationSources).load();
+        AdminHomePage adminHomePage = loginPage.successAdminLogin(admin);       //
         // Steps
-        loginPage.clearLoginInput();
-        loginPage.getLoginInput().sendKeys(UserRepository.getAdmin().getLogin());
-        loginPage.clearPasswordInput();
-        loginPage.getPasswordInput().sendKeys(UserRepository.getAdmin().getPassword());
-
+        Assert.assertEquals(admin.getLogin(),
+                adminHomePage.getLoginAccountText());
+        Thread.sleep(5000);
         //
         // Return to previous state
-        Thread.sleep(2000);
-        //adminHomePage.clickLogout();
-        Thread.sleep(2000);
+
+        adminHomePage.clickLogout();
+        Thread.sleep(5000);
+
     }
 
     @AfterSuite
     public void tearDown(){
-        Application.get().quit();
+        Application.remove();
     }
 }
