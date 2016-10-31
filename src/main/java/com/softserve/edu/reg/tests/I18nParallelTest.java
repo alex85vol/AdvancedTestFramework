@@ -28,7 +28,7 @@ public class I18nParallelTest {
 		// TODO Remove from test
 //		WebDriver driver = new FirefoxDriver();
 		System.setProperty("webdriver.chrome.driver",
-				"\\src\\main\\resources\\drivers\\chromedriver.jar");
+				"\\src\\main\\resources\\drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get("http://registrator.herokuapp.com/login");

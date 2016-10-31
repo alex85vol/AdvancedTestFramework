@@ -9,7 +9,23 @@ interface IDriverPath {
 }
 
 interface IImplicitTimeOut {
-    ILoginUrl setImplicitTimeOut(long implicitTimeOut);
+    IExplicitTimeOut setImplicitTimeOut(long implicitTimeOut);
+}
+
+interface IExplicitTimeOut {
+    ILanguage setExplicitTimeOut(long explicitTimeOut);
+}
+
+interface ILanguage {
+    ISearchStrategy setLanguage(String language);
+}
+
+interface ISearchStrategy {
+    ILoggerStrategy setSearchStrategy(String searchStrategy);
+}
+
+interface ILoggerStrategy {
+    ILoginUrl setLoggerStrategy(String loggerStrategy);
 }
 
 interface ILoginUrl {
@@ -17,7 +33,11 @@ interface ILoginUrl {
 }
 
 interface ILogoutUrl {
-    IBuild setLogoutUrl(String logoutUrl);
+    IServerUrl setLogoutUrl(String logoutUrl);
+}
+
+interface IServerUrl {
+    IBuild setServerUrl(String serverUrl);
 }
 
 interface IBuild {
@@ -25,7 +45,8 @@ interface IBuild {
 }
 
 public class ApplicationSources implements IBrowserName, IDriverPath,
-        IImplicitTimeOut, ILoginUrl, ILogoutUrl,
+        IImplicitTimeOut, IExplicitTimeOut, ILanguage, ISearchStrategy,
+        ILoggerStrategy, ILoginUrl, ILogoutUrl, IServerUrl,
         IBuild, IApplicationSources {
 
 
@@ -36,17 +57,17 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
     //private String defaultProfile;
     // Implicit and Explicit Waits
     private long implicitTimeOut;
-    //private long explicitTimeOut;
+    private long explicitTimeOut;
     // Localization Strategy
-    //private String language;
+    private String language;
     // Search Strategy
-    //private String searchStrategy;
+    private String searchStrategy;
     // Logger Strategy
-    //private String loggerStrategy;
+    private String loggerStrategy;
     // URLs
     private String loginUrl;
     private String logoutUrl;
-    //private String serverUrl;
+    private String serverUrl;
     // Connect to DB
 
     private ApplicationSources() {
@@ -67,8 +88,27 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
         return this;
     }
 
-    public ILoginUrl setImplicitTimeOut(long implicitTimeOut) {
+    public IExplicitTimeOut setImplicitTimeOut(long implicitTimeOut) {
         this.implicitTimeOut = implicitTimeOut;
+        return this;
+    }
+
+    public ILanguage setExplicitTimeOut(long explicitTimeOut) {
+        this.explicitTimeOut = explicitTimeOut;
+        return this;
+    }
+
+    public ISearchStrategy setLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    public ILoggerStrategy setSearchStrategy(String searchStrategy) {
+        this.searchStrategy = searchStrategy;
+        return this;
+    }
+    public ILoginUrl setLoggerStrategy(String loggerStrategy) {
+        this.loggerStrategy = loggerStrategy;
         return this;
     }
 
@@ -77,8 +117,13 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
         return this;
     }
 
-    public IBuild setLogoutUrl(String logoutUrl) {
+    public IServerUrl setLogoutUrl(String logoutUrl) {
         this.logoutUrl = logoutUrl;
+        return this;
+    }
+
+    public IBuild setServerUrl(String serverUrl) {
+        this.serverUrl = serverUrl;
         return this;
     }
 
@@ -100,11 +145,32 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
         return implicitTimeOut;
     }
 
+    public long getExplicitTimeOut() {
+        return explicitTimeOut;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public String getSearchStrategy() {
+        return searchStrategy;
+    }
+
+    public String getLoggerStrategy() {
+        return loggerStrategy;
+    }
+
     public String getLoginUrl() {
         return loginUrl;
     }
 
     public String getLogoutUrl() {
         return logoutUrl;
+    }
+
+
+    public String getServerUrl() {
+        return serverUrl;
     }
 }

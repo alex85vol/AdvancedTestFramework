@@ -24,7 +24,7 @@ public class I18nTest {
 	public void beforeClass() {
 		System.out.println("@BeforeClass");
 		System.setProperty("webdriver.chrome.driver",
-				"src\\main\\resources\\drivers\\chromedriver.jar");
+				"src\\main\\resources\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
@@ -62,7 +62,7 @@ public class I18nTest {
 		// TODO Remove from test
 //		WebDriver driver = new FirefoxDriver();
 //		System.setProperty("webdriver.chrome.driver",
-//				"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.jar");
+//				"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
 //		WebDriver driver = new ChromeDriver();
 //		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //		driver.get("http://registrator.herokuapp.com/login");

@@ -2,15 +2,13 @@ package com.softserve.edu.reg.tests;
 
 
 import com.softserve.edu.reg.apps.ApplicationSources;
-import com.softserve.edu.reg.apps.ApplicationSourcesRepository;
 import com.softserve.edu.reg.data.IUser;
-import com.softserve.edu.reg.data.User;
 import com.softserve.edu.reg.data.UserRepository;
-import com.softserve.edu.reg.pages.AdminHomePage;
 import com.softserve.edu.reg.pages.Application;
 import com.softserve.edu.reg.pages.LoginPage;
-import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 /**
  * Created by Demon on 30.10.2016.
@@ -19,8 +17,8 @@ public class LoginTest2 {
 
     @BeforeSuite
     public void warmUp(){
-        ApplicationSourcesRepository.getChromeHeroku();
-        Application.get().navigate().to(ApplicationSourcesRepository.getFirefoxHeroku().getLoginUrl());
+    ;
+
 
 
 
