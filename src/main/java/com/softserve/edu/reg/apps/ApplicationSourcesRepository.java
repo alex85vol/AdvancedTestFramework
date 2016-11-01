@@ -14,7 +14,7 @@ public final class ApplicationSourcesRepository {
 	public static ApplicationSources getFirefoxHeroku() {
 		return ApplicationSources.get()
 				.setBrowserName("Firefox")
-				.setDriverPath("src\\main\\resources\\drivers\\geckodriver.exe")
+				.setDriverPath("src\\main\\resources\\drivers\\geckodriver.jar")
 				.setBrowserPath(" ")
 				.setDefaultProfile(" ")
 				.setImplicitTimeOut(5L)
@@ -33,7 +33,7 @@ public final class ApplicationSourcesRepository {
 	public static ApplicationSources getChromeHeroku() {
 		return ApplicationSources.get()
 				.setBrowserName("Chrome")
-				.setDriverPath("src\\main\\resources\\drivers\\chromedriver.exe")
+				.setDriverPath("src\\main\\resources\\drivers\\chromedriver.jar")
 				.setBrowserPath(" ")
 				.setDefaultProfile(" ")
 				.setImplicitTimeOut(5L)
@@ -52,7 +52,7 @@ public final class ApplicationSourcesRepository {
 	public static ApplicationSources getIEHeroku() {
 		return ApplicationSources.get()
 				.setBrowserName("IE")
-				.setDriverPath("src\\main\\resources\\drivers\\chromedriver.exe")
+				.setDriverPath("src\\main\\resources\\drivers\\chromedriver.jar")
 				.setBrowserPath(" ")
 				.setDefaultProfile(" ")
 				.setImplicitTimeOut(5L)
