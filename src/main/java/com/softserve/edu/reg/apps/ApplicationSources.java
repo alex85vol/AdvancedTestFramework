@@ -5,8 +5,17 @@ interface IBrowserName {
 }
 
 interface IDriverPath {
-    IImplicitTimeOut setDriverPath(String driverPath);
+    IBrowserPath setDriverPath(String driverPath);
 }
+
+interface IBrowserPath {
+    IDefaultProfile setBrowserPath(String browserPath);
+}
+
+interface IDefaultProfile {
+    IImplicitTimeOut setDefaultProfile(String defaultProfile);
+}
+
 
 interface IImplicitTimeOut {
     IExplicitTimeOut setImplicitTimeOut(long implicitTimeOut);
@@ -45,6 +54,7 @@ interface IBuild {
 }
 
 public class ApplicationSources implements IBrowserName, IDriverPath,
+        IBrowserPath, IDefaultProfile,
         IImplicitTimeOut, IExplicitTimeOut, ILanguage, ISearchStrategy,
         ILoggerStrategy, ILoginUrl, ILogoutUrl, IServerUrl,
         IBuild, IApplicationSources {
@@ -53,8 +63,8 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
     // Browser Data
     private String browserName;
     private String driverPath;
-    //private String browserPath;
-    //private String defaultProfile;
+    private String browserPath;
+    private String defaultProfile;
     // Implicit and Explicit Waits
     private long implicitTimeOut;
     private long explicitTimeOut;
@@ -83,9 +93,21 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
         return this;
     }
 
-    public IImplicitTimeOut setDriverPath(String driverPath) {
+    public IBrowserPath setDriverPath(String driverPath) {
         this.driverPath = driverPath;
         return this;
+
+    }
+
+    public IDefaultProfile setBrowserPath(String browserPath){
+        this.browserPath = browserPath;
+        return this;
+    }
+
+    public IImplicitTimeOut setDefaultProfile(String defaultProfile) {
+        this.defaultProfile = defaultProfile;
+        return this;
+
     }
 
     public IExplicitTimeOut setImplicitTimeOut(long implicitTimeOut) {
@@ -141,6 +163,10 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
         return driverPath;
     }
 
+    public String getBrowserPath() { return browserPath;}
+
+    public String getDefaultProfile() { return defaultProfile;}
+
     public long getImplicitTimeOut() {
         return implicitTimeOut;
     }
@@ -157,11 +183,7 @@ public class ApplicationSources implements IBrowserName, IDriverPath,
         return searchStrategy;
     }
 
-    public String getLoggerstrategy() {
-        return loggerStrategy;
-    }
-
-
+    public String getLoggerstrategy() { return loggerStrategy; }
 
     public String getLoginUrl() {
         return loginUrl;

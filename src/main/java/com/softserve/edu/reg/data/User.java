@@ -38,16 +38,16 @@ public class User implements IFirstname, ILastname, IEmail,
 	private String login;
 	private String password;
 	private String community;
-	
+
 	private User() {
 	}
 
 	public static IFirstname get() {
 		return new User();
 	}
-	
+
 	// setters
-	
+
 	public ILastname setFirstname(String firstname) {
 		this.firstname = firstname;
 		return this;
@@ -81,7 +81,7 @@ public class User implements IFirstname, ILastname, IEmail,
 	public User build() {
 		return this;
 	}
-	
+
 	// getters
 
 	public String getFirstname() {
