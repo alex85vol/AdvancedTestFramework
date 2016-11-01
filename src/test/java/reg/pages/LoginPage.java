@@ -1,4 +1,4 @@
-package com.softserve.edu.reg.pages;
+package reg.pages;
 
 import java.util.HashMap;
 
@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.softserve.edu.reg.data.IUser;
+import reg.data.IUser;
 
 public class LoginPage extends ATopPage {
 	public static final String SRC_ATTRIBUTE = "src"; 

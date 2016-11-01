@@ -1,8 +1,7 @@
-package com.softserve.edu.reg.tests;
+package reg.tests;
 
-import com.softserve.edu.reg.pages.ATopPage.ChangeLanguageFields;
-import com.softserve.edu.reg.pages.LoginPage;
-import com.softserve.edu.reg.pages.LoginPage.LoginPageL10n;
+import reg.pages.ATopPage.ChangeLanguageFields;
+import reg.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -39,11 +38,11 @@ public class I18nParallelTest {
 		//
 		// Check
 		Assert.assertEquals(loginPage.getLoginLabelText(),
-				LoginPageL10n.LOGIN_LABEL.getLocalization(language));
+				LoginPage.LoginPageL10n.LOGIN_LABEL.getLocalization(language));
 		Assert.assertEquals(loginPage.getPasswordLabelText(),
-				LoginPageL10n.PASSWORD_LABEL.getLocalization(language));
+				LoginPage.LoginPageL10n.PASSWORD_LABEL.getLocalization(language));
 		Assert.assertEquals(loginPage.getSignintText(),
-				LoginPageL10n.SUBMIT_BUTTON.getLocalization(language));
+				LoginPage.LoginPageL10n.SUBMIT_BUTTON.getLocalization(language));
 		Thread.sleep(5000);
 		//
 		// Return to previous state

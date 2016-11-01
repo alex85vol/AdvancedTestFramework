@@ -1,4 +1,4 @@
-package com.softserve.edu.reg.pages;
+package reg.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

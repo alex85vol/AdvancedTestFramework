@@ -1,4 +1,4 @@
-package com.softserve.edu.reg.tests;
+package reg.tests;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -13,9 +13,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.softserve.edu.reg.pages.ATopPage.ChangeLanguageFields;
-import com.softserve.edu.reg.pages.LoginPage;
-import com.softserve.edu.reg.pages.LoginPage.LoginPageL10n;
+import reg.pages.ATopPage.ChangeLanguageFields;
+import reg.pages.LoginPage;
 
 public class I18nTest {
 	private WebDriver driver;
@@ -73,11 +72,11 @@ public class I18nTest {
 		//
 		// Check
 		Assert.assertEquals(loginPage.getLoginLabelText(),
-				LoginPageL10n.LOGIN_LABEL.getLocalization(language));
+				LoginPage.LoginPageL10n.LOGIN_LABEL.getLocalization(language));
 		Assert.assertEquals(loginPage.getPasswordLabelText(),
-				LoginPageL10n.PASSWORD_LABEL.getLocalization(language));
+				LoginPage.LoginPageL10n.PASSWORD_LABEL.getLocalization(language));
 		Assert.assertEquals(loginPage.getSignintText(),
-				LoginPageL10n.SUBMIT_BUTTON.getLocalization(language));
+				LoginPage.LoginPageL10n.SUBMIT_BUTTON.getLocalization(language));
 		//
 		// MUST BE DELETE
 		Thread.sleep(5000);

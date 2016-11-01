@@ -1,4 +1,4 @@
-package com.softserve.edu.reg.apps;
+package reg.apps;
 
 /**
  * Created by Demon on 30.10.2016.

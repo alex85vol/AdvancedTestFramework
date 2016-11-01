@@ -1,4 +1,4 @@
-package com.softserve.edu.reg.apps;
+package reg.apps;
 
 interface IBrowserName {
     IDriverPath setBrowserName(String browserName);

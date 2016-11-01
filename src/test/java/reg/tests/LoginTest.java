@@ -1,13 +1,13 @@
-package com.softserve.edu.reg.tests;
+package reg.tests;
 
 
-import com.softserve.edu.reg.apps.ApplicationSources;
-import com.softserve.edu.reg.apps.ApplicationSourcesRepository;
-import com.softserve.edu.reg.data.IUser;
-import com.softserve.edu.reg.data.UserRepository;
-import com.softserve.edu.reg.pages.AdminHomePage;
-import com.softserve.edu.reg.pages.Application;
-import com.softserve.edu.reg.pages.LoginPage;
+import reg.apps.ApplicationSources;
+import reg.apps.ApplicationSourcesRepository;
+import reg.data.IUser;
+import reg.data.UserRepository;
+import reg.pages.AdminHomePage;
+import reg.pages.Application;
+import reg.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;

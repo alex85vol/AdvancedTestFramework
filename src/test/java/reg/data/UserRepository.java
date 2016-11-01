@@ -1,4 +1,4 @@
-package com.softserve.edu.reg.data;
+package reg.data;
 
 public final class UserRepository {
 

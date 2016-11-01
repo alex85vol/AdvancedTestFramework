@@ -1,7 +1,7 @@
-package com.softserve.edu.reg.pages;
+package reg.pages;
 
-import com.softserve.edu.reg.apps.ApplicationSources;
-import com.softserve.edu.reg.apps.ApplicationSourcesRepository;
+import reg.apps.ApplicationSources;
+import reg.apps.ApplicationSourcesRepository;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
