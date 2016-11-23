@@ -23,7 +23,7 @@ public class I18nTest {
 	public void beforeClass() {
 		System.out.println("@BeforeClass");
 		System.setProperty("webdriver.chrome.driver",
-				"src\\main\\resources\\drivers\\chromedriver.exe");
+				"src\\main\\resources\\lib\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
